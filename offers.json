@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": { "en": "Summer Special - 20% Off", "ar": "عرض الصيف الخاص - خصم 20٪" },
+        "description": { "en": "Enjoy the summer in Abu Dhabi with a 20% discount on all SUV rentals for a week or more.", "ar": "استمتع بالصيف في أبوظبي مع خصم 20٪ على جميع سيارات الدفع الرباعي عند الاستئجار لمدة أسبوع أو أكثر." },
+        "image": "https://images.unsplash.com/photo-1580273916550-4895a4a5e3e4?q=80&w=2187&auto=format&fit=crop"
+    },
+    {
+        "id": 2,
+        "title": { "en": "Monthly Rental Deal", "ar": "عرض الإيجار الشهري" },
+        "description": { "en": "Rent any economy car for a full month and get our best competitive rates, perfect for long stays.", "ar": "استأجر أي سيارة اقتصادية لمدة شهر كامل واحصل على أفضل أسعارنا التنافسية، مثالية للإقامات الطويلة." },
+        "image": "https://images.unsplash.com/photo-1603584842424-e2b2496a0a03?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+        "id": 3,
+        "title": { "en": "Luxury Weekend", "ar": "عطلة نهاية أسبوع فاخرة" },
+        "description": { "en": "Book a luxury car for the weekend (Fri-Sun) and get a 15% discount. Travel in style.", "ar": "احجز سيارة فاخرة لعطلة نهاية الأسبوع (الجمعة - الأحد) واحصل على خصم 15٪. سافر بأناقة." },
+        "image": "https://images.unsplash.com/photo-1590362891234-1849b9a618f9?q=80&w=2071&auto=format&fit=crop"
+    }
+]

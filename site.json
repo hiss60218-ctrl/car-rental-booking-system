@@ -1,0 +1,16 @@
+{
+    "contact": {
+        "address": {
+            "en": "123 Electra Street, Abu Dhabi, UAE",
+            "ar": "123 شارع إلكترا، أبوظبي، الإمارات"
+        },
+        "email": "contact@estibyancars.ae",
+        "phone": "+971 2 555 0000"
+    },
+    "social": {
+        "facebook": "#",
+        "twitter": "#",
+        "instagram": "#",
+        "linkedin": "#"
+    }
+}

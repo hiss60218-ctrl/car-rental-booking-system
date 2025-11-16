@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": { "en": "Abu Dhabi Int'l Airport", "ar": "مطار أبوظبي الدولي" },
+        "address": { "en": "Terminal 3, Arrivals Hall", "ar": "مبنى 3، صالة القادمين" },
+        "hours": { "en": "24/7", "ar": "24/7" },
+        "phone": "+971 2 555 1234",
+        "coords": { "lat": 24.4329, "lng": 54.6511 }
+    },
+    {
+        "id": 2,
+        "name": { "en": "Downtown - Corniche", "ar": "وسط المدينة - الكورنيش" },
+        "address": { "en": "Corniche Rd W, Opp. Emirates Palace", "ar": "شارع الكورنيش الغربي، مقابل قصر الإمارات" },
+        "hours": { "en": "8 AM - 10 PM", "ar": "8 صباحًا - 10 مساءً" },
+        "phone": "+971 2 555 5678",
+        "coords": { "lat": 24.4667, "lng": 54.3167 }
+    },
+    {
+        "id": 3,
+        "name": { "en": "Yas Island", "ar": "جزيرة ياس" },
+        "address": { "en": "Yas Mall, Ground Floor", "ar": "ياس مول، الطابق الأرضي" },
+        "hours": { "en": "10 AM - 10 PM", "ar": "10 صباحًا - 10 مساءً" },
+        "phone": "+971 2 555 9101",
+        "coords": { "lat": 24.4842, "lng": 54.6111 }
+    }
+]

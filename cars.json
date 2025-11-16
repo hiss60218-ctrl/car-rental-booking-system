@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": { "en": "Toyota Yaris", "ar": "تويوتا يارس" },
+    "category": "economy",
+    "images": [
+      "https://images.unsplash.com/photo-1617469723732-262d1532a65a?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1617469723824-547e19359a3e?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "4 Passengers", "ar": "4 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 120, "weekly": 750 }
+  },
+  {
+    "id": 2,
+    "name": { "en": "Hyundai Accent", "ar": "هيونداي أكسنت" },
+    "category": "economy",
+    "images": [
+      "https://images.unsplash.com/photo-1629819385150-144f8f6f8b63?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1629819385202-d313cac70068?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "5 Passengers", "ar": "5 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 130, "weekly": 800 }
+  },
+  {
+    "id": 3,
+    "name": { "en": "Toyota RAV4", "ar": "تويوتا راف 4" },
+    "category": "suv",
+    "images": [
+      "https://images.unsplash.com/photo-1631008988225-47d6f5c6b9b3?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1631008988270-e51c8936994c?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "5 Passengers", "ar": "5 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 250, "weekly": 1600 }
+  },
+  {
+    "id": 4,
+    "name": { "en": "Nissan Patrol", "ar": "نيسان باترول" },
+    "category": "suv",
+    "images": [
+      "https://images.unsplash.com/photo-1616422285854-e3a47a11b619?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616422285899-7b34b9d0e2e0?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "7 Passengers", "ar": "7 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 450, "weekly": 3000 }
+  },
+  {
+    "id": 5,
+    "name": { "en": "Mercedes S-Class", "ar": "مرسيدس اس كلاس" },
+    "category": "luxury",
+    "images": [
+      "https://images.unsplash.com/photo-1617469723732-262d1532a65a?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1617469723824-547e19359a3e?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "4 Passengers", "ar": "4 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 800, "weekly": 5400 }
+  },
+  {
+    "id": 6,
+    "name": { "en": "BMW 7 Series", "ar": "بي ام دبليو الفئة السابعة" },
+    "category": "luxury",
+    "images": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555353544-78a855da2854?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "specs": {
+      "fuel": { "en": "Gasoline", "ar": "بنزين" },
+      "capacity": { "en": "4 Passengers", "ar": "4 ركاب" },
+      "transmission": { "en": "Automatic", "ar": "أوتوماتيك" }
+    },
+    "price": { "daily": 750, "weekly": 5100 }
+  }
+]
