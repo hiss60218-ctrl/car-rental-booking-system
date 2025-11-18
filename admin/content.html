@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { 'sans': ['Roboto', 'sans-serif'], 'cairo': ['Cairo', 'sans-serif'] },
+            colors: { 'primary': '#0D244F', 'secondary': '#F7C548', 'light': '#F8F9FA', 'dark': '#343A40' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-cairo bg-light">
+
+    <!-- Admin Panel Section -->
+    <div id="admin-panel" class="hidden h-screen bg-gray-100 md:flex">
+        <aside id="admin-sidebar" class="flex flex-col w-64 bg-dark text-white">
+            <!-- Sidebar content is injected by JS -->
+        </aside>
+        <div class="flex flex-col flex-1 overflow-y-auto">
+            <main class="p-4 md:p-8">
+                <div class="flex items-center justify-between mb-8">
+                    <h1 id="content-title" class="text-3xl font-bold text-primary"></h1>
+                    <button id="add-content-btn" class="flex items-center px-4 py-2 font-semibold text-white rounded-md bg-secondary hover:bg-opacity-80">
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto bg-white rounded-lg shadow">
+                    <table class="w-full text-sm text-left text-gray-500">
+                        <thead id="content-table-head" class="text-xs text-gray-700 uppercase bg-gray-50">
+                            <!-- Table head content is injected by JS -->
+                        </thead>
+                        <tbody id="content-table-body">
+                            <!-- Table body content is injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="content-modal" class="fixed inset-0 z-50 items-center justify-center hidden bg-black bg-opacity-60">
+        <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 mx-4 bg-white rounded-lg shadow-xl">
+            <button id="close-content-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 id="content-modal-title" class="mb-6 text-2xl font-bold text-primary"></h2>
+            <form id="content-form" class="space-y-4">
+                <!-- Form content is injected by JS -->
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

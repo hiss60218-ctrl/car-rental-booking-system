@@ -1,5 +1,5 @@
 {
-  "name": "istibyan Car Rental",
-  "description": "A modern and professional website for Estibyan Car Rental, a car rental service in Abu Dhabi, offering a wide range of vehicles, easy booking, and multi-language support.",
+  "name": "istibyan Car Rental (Static)",
+  "description": "A fully static car rental website built with HTML, CSS, and vanilla JavaScript. It features a client-side admin panel and uses local storage for data management, making it fast and easy to deploy.",
   "requestFramePermissions": []
 }

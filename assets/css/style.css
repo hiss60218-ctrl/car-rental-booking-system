@@ -1,0 +1,19 @@
+/* Add any custom styles here that are not covered by Tailwind CSS */
+
+/* Smooth transition for modals */
+#customer-modal, #car-modal, #content-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Ensure admin panel is usable on mobile by making it scrollable */
+@media (max-width: 767px) {
+    #admin-panel {
+        display: block;
+        height: auto;
+        min-height: 100vh;
+    }
+    #admin-sidebar {
+        width: 100%;
+        height: auto;
+    }
+}

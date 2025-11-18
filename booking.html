@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estibyan Car Rental | حجز سيارة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { 'sans': ['Roboto', 'sans-serif'], 'cairo': ['Cairo', 'sans-serif'] },
+            colors: { 'primary': '#0D244F', 'secondary': '#F7C548', 'light': '#F8F9FA', 'dark': '#343A40' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-cairo bg-light text-dark">
+    <header id="header-placeholder" class="sticky top-0 z-50 shadow-md bg-primary"></header>
+    
+    <main>
+        <div class="py-16 bg-light">
+            <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-60">
+                <div class="relative max-w-sm p-8 mx-4 text-center bg-white rounded-lg shadow-xl">
+                     <button id="close-modal-btn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <h2 id="booking-success-title" class="mb-4 text-2xl font-bold text-primary"></h2>
+                    <p id="booking-success-msg" class="text-gray-700"></p>
+                </div>
+            </div>
+
+            <div class="container px-4 mx-auto">
+                <div class="max-w-4xl mx-auto">
+                    <h1 id="booking-title" class="mb-4 text-4xl font-bold text-center text-primary"></h1>
+                    <p id="booking-subtitle" class="mb-8 text-lg text-center text-gray-600"></p>
+                    <form id="booking-form" class="p-8 space-y-6 bg-white rounded-lg shadow-lg">
+                        
+                        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                            <div>
+                                <label for="selectCar" id="select-car-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <select id="selectCar" name="carId" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required>
+                                    <!-- Car options injected by JS -->
+                                </select>
+                            </div>
+                            <div id="car-viewer" class="relative hidden">
+                                <h3 id="car-details-title" class="mb-2 font-semibold text-gray-700"></h3>
+                                <div class="relative overflow-hidden rounded-lg shadow-md aspect-video">
+                                    <img id="car-image" src="" alt="" class="object-cover w-full h-full" />
+                                    <div id="car-image-controls"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label for="fullName" id="full-name-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required />
+                            </div>
+                            <div>
+                                <label for="phoneNumber" id="phone-number-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required />
+                            </div>
+                             <div>
+                                <label for="email" id="email-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" />
+                            </div>
+                             <div>
+                                <label for="idNumber" id="id-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="text" id="idNumber" name="idNumber" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" />
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label for="pickupLocation" id="pickup-location-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <select id="pickupLocation" name="pickupLocation" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required>
+                                    <!-- Branch options injected by JS -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="pickupTime" id="pickup-time-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="datetime-local" id="pickupTime" name="pickupTime" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required />
+                            </div>
+                            <div>
+                                <label for="dropoffLocation" id="dropoff-location-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <select id="dropoffLocation" name="dropoffLocation" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required>
+                                    <!-- Branch options injected by JS -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="dropoffTime" id="dropoff-time-label" class="block mb-2 font-semibold text-gray-700"></label>
+                                <input type="datetime-local" id="dropoffTime" name="dropoffTime" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required />
+                            </div>
+                        </div>
+                        <div>
+                             <label for="currentLocation" id="current-location-label" class="block mb-2 font-semibold text-gray-700"></label>
+                             <textarea id="currentLocation" name="currentLocation" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary" required></textarea>
+                        </div>
+                        <div>
+                             <label for="notes" id="notes-label" class="block mb-2 font-semibold text-gray-700"></label>
+                             <textarea id="notes" name="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-secondary focus:border-secondary"></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-request-btn" class="w-full px-8 py-3 text-lg font-bold text-white transition-transform duration-300 rounded-md shadow-lg bg-secondary hover:scale-105">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-placeholder" class="bg-dark text-light"></footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

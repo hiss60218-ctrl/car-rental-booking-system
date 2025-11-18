@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estibyan Car Rental | المدونة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { 'sans': ['Roboto', 'sans-serif'], 'cairo': ['Cairo', 'sans-serif'] },
+            colors: { 'primary': '#0D244F', 'secondary': '#F7C548', 'light': '#F8F9FA', 'dark': '#343A40' }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-cairo bg-light text-dark">
+    <header id="header-placeholder" class="sticky top-0 z-50 shadow-md bg-primary"></header>
+    
+    <main>
+        <div class="py-16 bg-light">
+            <div class="container px-4 mx-auto">
+                <h1 id="blog-title" class="mb-4 text-4xl font-bold text-center text-primary"></h1>
+                <p id="blog-subtitle" class="mb-12 text-lg text-center text-gray-600"></p>
+                <div id="blog-posts-grid" class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <!-- Blog posts will be injected by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-placeholder" class="bg-dark text-light"></footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
