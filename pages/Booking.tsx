@@ -61,7 +61,7 @@ const Booking: React.FC = () => {
         const data = Object.fromEntries(formData.entries());
 
         addBooking({
-            carId: data.carId as string,
+            carId: Number(data.carId),
             fullName: data.fullName as string,
             phoneNumber: data.phoneNumber as string,
             email: data.email as string,

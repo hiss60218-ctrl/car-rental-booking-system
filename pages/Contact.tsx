@@ -1,6 +1,19 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+
+const TikTokIcon = (props: React.ComponentProps<'svg'>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91 0 .08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.01-1.58-.01-3.2-.01-4.8 0-.46-.05-.92-.12-1.37-.47-2.55-2.62-4.34-5.18-4.38H12.525zM12.525 8.02c.01 1.58.01 3.19.01 4.79 0 .45.05.9.12 1.34.46 2.5 2.59 4.3 5.09 4.5v4.03c-1.44-.05-2.89-.35-4.2-.97-.01-1.58-.01-3.2-.01-4.8 0-.46-.05-.92-.12-1.37-.47-2.55-2.62-4.34-5.18-4.38H12.525z" />
+    </svg>
+);
 
 const Contact: React.FC = () => {
     const { t, language, siteConfig } = useAppContext();
@@ -58,6 +71,17 @@ const Contact: React.FC = () => {
                                     <h3 className="font-bold">{t('contact.phone_label')}</h3>
                                     <p>{siteConfig.contact.phone}</p>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="pt-6 mt-6 border-t border-gray-600">
+                             <h3 className="mb-4 font-bold text-white">{t('footer.follow_us')}</h3>
+                             <div className="flex space-x-4 rtl:space-x-reverse">
+                                <a href={siteConfig.social.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary"><Facebook size={24} /></a>
+                                <a href={siteConfig.social.twitter} aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary"><Twitter size={24} /></a>
+                                <a href={siteConfig.social.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary"><Instagram size={24} /></a>
+                                <a href={siteConfig.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary"><Linkedin size={24} /></a>
+                                <a href={siteConfig.social.tiktok} aria-label="TikTok" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-secondary"><TikTokIcon /></a>
                             </div>
                         </div>
                     </div>

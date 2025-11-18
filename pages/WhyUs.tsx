@@ -4,8 +4,17 @@ import { useAppContext } from '../context/AppContext';
 import type { Strength } from '../types';
 import { Car, ShieldCheck, Wrench, Clock, CheckCircle } from 'lucide-react';
 
+const iconMap: { [key: string]: React.ElementType } = {
+    Car,
+    ShieldCheck,
+    Wrench,
+    Clock,
+    CheckCircle,
+};
+
 const StrengthItem: React.FC<{ item: Strength }> = ({ item }) => {
-    const Icon = item.icon;
+    const Icon = iconMap[item.icon];
+    if (!Icon) return null;
     return (
         <div className="flex flex-col items-center p-6 text-center bg-white rounded-lg shadow-md">
             <Icon size={48} className="mb-4 text-secondary" />
@@ -18,11 +27,11 @@ const WhyUs: React.FC = () => {
     const { t } = useAppContext();
 
     const strengths: Strength[] = [
-        { icon: Car, title: t('why_us.strength_1') },
-        { icon: ShieldCheck, title: t('why_us.strength_2') },
-        { icon: Wrench, title: t('why_us.strength_3') },
-        { icon: Clock, title: t('why_us.strength_4') },
-        { icon: CheckCircle, title: t('why_us.strength_5') },
+        { icon: 'Car', title: t('why_us.strength_1') },
+        { icon: 'ShieldCheck', title: t('why_us.strength_2') },
+        { icon: 'Wrench', title: t('why_us.strength_3') },
+        { icon: 'Clock', title: t('why_us.strength_4') },
+        { icon: 'CheckCircle', title: t('why_us.strength_5') },
     ];
 
     return (

@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 import { Facebook, Twitter, Instagram, Linkedin, Car } from 'lucide-react';
 
+const TikTokIcon = (props: React.ComponentProps<'svg'>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91 0 .08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.01-1.58-.01-3.2-.01-4.8 0-.46-.05-.92-.12-1.37-.47-2.55-2.62-4.34-5.18-4.38H12.525zM12.525 8.02c.01 1.58.01 3.19.01 4.79 0 .45.05.9.12 1.34.46 2.5 2.59 4.3 5.09 4.5v4.03c-1.44-.05-2.89-.35-4.2-.97-.01-1.58-.01-3.2-.01-4.8 0-.46-.05-.92-.12-1.37-.47-2.55-2.62-4.34-5.18-4.38H12.525z" />
+    </svg>
+);
+
 const Footer: React.FC = () => {
     const { t, language, siteConfig } = useAppContext();
 
@@ -43,6 +56,7 @@ const Footer: React.FC = () => {
                             <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary"><Twitter /></a>
                             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary"><Instagram /></a>
                             <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary"><Linkedin /></a>
+                            <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary"><TikTokIcon /></a>
                         </div>
                     </div>
                 </div>

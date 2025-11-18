@@ -1,4 +1,3 @@
-import React from 'react';
 
 export interface Car {
   id: number;
@@ -33,13 +32,13 @@ export interface Offer {
 }
 
 export interface Feature {
-    icon: React.ElementType;
+    icon: string;
     title: string;
     description: string;
 }
 
 export interface Strength {
-    icon: React.ElementType;
+    icon: string;
     title: string;
 }
 
@@ -53,14 +52,14 @@ export interface SiteConfig {
     facebook: string;
     twitter: string;
     instagram: string;
-    // FIX: Add linkedin property to social links to match usage in Footer component.
     linkedin: string;
+    tiktok: string;
   };
 }
 
 export interface Booking {
   id: string;
-  carId: string;
+  carId: number;
   carName: { en: string, ar: string };
   fullName: string;
   phoneNumber: string;
@@ -74,4 +73,24 @@ export interface Booking {
   notes?: string;
   status: 'new' | 'confirmed' | 'completed';
   createdAt: string;
+}
+
+export interface Customer {
+    id: number;
+    name: string;
+    phone: string;
+    carId: number;
+    rentalDate: string;
+    returnDate: string;
+    totalAmount: number;
+    paidAmount: number;
+}
+
+export interface CarContent {
+    id: number;
+    carId: number;
+    title: { en: string; ar: string };
+    content: { en: string; ar: string };
+    seoText: { en: string; ar: string };
+    image: string;
 }

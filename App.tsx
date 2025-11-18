@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useAppContext } from './context/AppContext';
 
 import Layout from './components/Layout';
@@ -20,6 +19,19 @@ import AdminLayout from './components/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminCars from './pages/admin/AdminCars';
 import AdminBookings from './pages/admin/AdminBookings';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminCustomers from './pages/admin/AdminCustomers';
+import AdminContent from './pages/admin/AdminContent';
+import AdminMessages from './pages/admin/AdminMessages';
+
+
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAuthenticated } = useAppContext();
+  if (!isAuthenticated) {
+    return <Navigate to="/admin/login" replace />;
+  }
+  return <>{children}</>;
+};
 
 const AppContent: React.FC = () => {
   const { language } = useAppContext();
@@ -34,13 +46,23 @@ const AppContent: React.FC = () => {
 
   if (isAdminRoute) {
     return (
-      <AdminLayout>
-        <Routes>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/cars" element={<AdminCars />} />
-          <Route path="/admin/bookings" element={<AdminBookings />} />
-        </Routes>
-      </AdminLayout>
+      <Routes>
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/*" element={
+          <ProtectedRoute>
+            <AdminLayout>
+              <Routes>
+                <Route path="/" element={<AdminDashboard />} />
+                <Route path="/cars" element={<AdminCars />} />
+                <Route path="/bookings" element={<AdminBookings />} />
+                <Route path="/customers" element={<AdminCustomers />} />
+                <Route path="/content" element={<AdminContent />} />
+                <Route path="/messages" element={<AdminMessages />} />
+              </Routes>
+            </AdminLayout>
+          </ProtectedRoute>
+        } />
+      </Routes>
     );
   }
 

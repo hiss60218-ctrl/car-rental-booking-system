@@ -1,15 +1,24 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { LayoutDashboard, Car, CalendarCheck, ArrowLeft } from 'lucide-react';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { LayoutDashboard, Car, CalendarCheck, Users, FileText, MessageSquare, ArrowLeft, LogOut } from 'lucide-react';
 import { useAppContext } from '../../context/AppContext';
 
 const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { t } = useAppContext();
+    const { t, logout } = useAppContext();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/admin/login');
+    };
 
     const navLinks = [
         { name: t('admin.dashboard'), path: '/admin', icon: LayoutDashboard },
         { name: t('admin.cars_management'), path: '/admin/cars', icon: Car },
         { name: t('admin.bookings_management'), path: '/admin/bookings', icon: CalendarCheck },
+        { name: t('admin.customers_management'), path: '/admin/customers', icon: Users },
+        { name: t('admin.content_management'), path: '/admin/content', icon: FileText },
+        { name: t('admin.messages_management'), path: '/admin/messages', icon: MessageSquare },
     ];
 
     const activeClass = "bg-secondary text-white";
@@ -26,20 +35,24 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     {navLinks.map(link => (
                         <NavLink
                             key={link.path}
-                            to={link.path}
+                            to={`/admin${link.path === '/admin' ? '' : link.path}`}
                             end={link.path === '/admin'}
                             className={({ isActive }) => `${isActive ? activeClass : inactiveClass} flex items-center px-4 py-2 rounded-md transition-colors`}
                         >
-                            <link.icon className="w-5 h-5 mr-3" />
-                            {link.name}
+                            <link.icon className="w-5 h-5 ml-2" />
+                            <span>{link.name}</span>
                         </NavLink>
                     ))}
                 </nav>
-                 <div className="p-4 border-t border-gray-700">
-                    <Link to="/" className="flex items-center justify-center px-4 py-2 text-white rounded-md bg-secondary hover:bg-opacity-80">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
+                 <div className="p-4 border-t border-gray-700 space-y-2">
+                    <Link to="/" className="flex items-center justify-center w-full px-4 py-2 text-white rounded-md bg-secondary hover:bg-opacity-80">
+                        <ArrowLeft className="w-5 h-5 ml-2" />
                         {t('admin.back_to_site')}
                     </Link>
+                    <button onClick={handleLogout} className="flex items-center justify-center w-full px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700">
+                        <LogOut className="w-5 h-5 ml-2" />
+                        {t('admin.logout')}
+                    </button>
                 </div>
             </aside>
 
